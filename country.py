@@ -3,6 +3,8 @@
 # Olivier Louwaars s2814714
 # 12-2-2015
 
+from flag_color import *
+
 class Country:
 	
 	def __init__(self,country):
@@ -20,8 +22,7 @@ def readText():
 		countryList.append(Country(line))
 	return countryList
 
-
-
 if __name__ == "__main__":
 	readText()
+	FlagColor()
 
