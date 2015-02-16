@@ -8,12 +8,17 @@ from random import *
 from PyQt4 import QtCore, QtGui
 
 class FlagColor(QtGui.QColor):
+        """Genereert een willekeurige kleur"""
 	
 	def __init__(self,):
+                """Maakt het color object aan door de methode
+                color aan te roepen"""
 		super(FlagColor,self).__init__()
 		self.color()
 	
 	def color(self):
+                """Genereert een willekeurige rgb kleur bestaande uit
+                rood, blauw en groen waardes van 0 tot en met 255."""
 		self.setRed(randrange(256))
 		self.setBlue(randrange(256))
 		self.setGreen(randrange(256))
