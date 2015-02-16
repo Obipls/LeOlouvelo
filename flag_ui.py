@@ -44,7 +44,7 @@ class Flag(QtGui.QWidget):
         self.show()
 
     def getDict(self):
-        ""'Methode die de dictionary met landnamen en landkleuren teruggeeft."""
+        """Methode die de dictionary met landnamen en landkleuren teruggeeft."""
         return self.cDict
 
     def onActivated(self, text):
