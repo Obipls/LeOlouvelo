@@ -7,8 +7,9 @@ from flag_color import *
 
 class Country:
         
-        def __init__(self,country):
+        def __init__(self,country,flag):
                 self.country=country
+                self.flag = flag
 
         def __str__(self):
                 return "Hello from {}".format(self.country)
@@ -18,10 +19,10 @@ def readText():
         infile=open("countries_list.txt")
         for line in infile:
                 country = line.strip()
-                countryList.append(Country(country))
+                flag = FlagColor()
+                countryList.append(Country(country, flag))
         return countryList
 
 if __name__ == "__main__":
         readText()
-        FlagColor()
 
