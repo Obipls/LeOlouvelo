@@ -17,10 +17,6 @@ class FlagColor(QtGui.QColor):
 		self.setRed(randrange(255))
 		self.setBlue(randrange(255))
 		self.setGreen(randrange(255))
-	return
-		
-		
-		
 
 if __name__ == '__main__':
 	app=QtGui.QApplication(sys.argv)
