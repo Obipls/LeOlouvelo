@@ -10,13 +10,13 @@ class Country:
         
         def __init__(self,country):
                 self.country=country
+                self.flag = FlagColor()
 
         def getName(self):
                 return self.country
 
         def getFlag(self):
-                color=FlagColor()
-                return color
+                return self.flag
 
         def __str__(self):
                 return "Hello from {}".format(self.country)
@@ -28,6 +28,12 @@ def readText():
                 country=line.strip()
                 countryList.append(Country(country))
         return countryList
+
+def countriesDict():
+        cDict = {}
+        for c in readText():
+                cDict[c.getName()] = c.getFlag()
+        return cDict
 
 
 if __name__ == "__main__":

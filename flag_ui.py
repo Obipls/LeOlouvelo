@@ -9,6 +9,7 @@ from country import *
 class Flag(QtGui.QWidget):
     def __init__(self):
         super(Flag,self).__init__()
+        self.cDict = countriesDict()
         self.initUI()
 
     def initUI(self):
@@ -32,13 +33,17 @@ class Flag(QtGui.QWidget):
         self.setWindowTitle('Countries flag')
         self.show()
 
+    def getDict(self):
+        return self.cDict
+
+    def onActivated(self, text):
+        country = self.box.currentText()
+        cDict = self.getDict()
+        flag = cDict.get(country, 'default')
+        self.fbox.setStyleSheet("QFrame{background-color:%s}"%flag.name())
 
     def center(self):
         qr=self.frameGeometry()
         cp=QtGui.QDesktopWidget().availableGeometry().center()
         qr.moveCenter(cp)
         self.move(qr.topLeft())
-
-    def onActivated(self, text):
-        self.flag=Country.getFlag(self.i)
-        self.fbox.setStyleSheet("QFrame{background-color:%s}"%self.flag.name())
