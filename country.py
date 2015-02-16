@@ -4,12 +4,17 @@
 # 12-2-2015
 
 from flag_color import *
+from flag_ui import *
+import sys
 
 class Country:
         
         def __init__(self,country,flag):
                 self.country=country
                 self.flag = flag
+
+        def getName(self):
+                return self.country
 
         def __str__(self):
                 return "Hello from {}".format(self.country)
@@ -24,5 +29,7 @@ def readText():
         return countryList
 
 if __name__ == "__main__":
-        readText()
+        app = QtGui.QApplication(sys.argv)
+        ex = Flag()
+        sys.exit(app.exec_())
 
