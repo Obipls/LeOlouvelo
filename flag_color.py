@@ -1,7 +1,7 @@
 # #!/usr/bin/env python
 # flag_color.py
 # Olivier Louwaars s2814714 en Leonardo Losno Velozo s1668501
-# 13-2-2015
+# 16-2-2015
 
 import sys
 from random import *

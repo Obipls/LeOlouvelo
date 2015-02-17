@@ -8,15 +8,15 @@ from country import *
 
 class Flag(QtGui.QWidget):
     """Maakt een Flag Widget bestaande uit een window die gecentreerd wordt
-    op het scherm. De window bestaat uit een combo box met landnamen en
+    op het scherm. De window bestaat uit een combobox met landnamen en
     een frame met de kleur van de vlag van het land"""
 
     def __init__(self):
         """Maakt een Flag object aan met Flag als superclass en een dictionary
-        (self.cDict) als attribuut waarin het land met bijhorende vlag in is
+        (self.cDict) als attribuut waarin het land met bijhorende vlag is
         opgeslagen."""
         super(Flag,self).__init__()
-        self.cDict = countriesDict()
+        self.cDict=countriesDict()
         self.initUI()
 
     def initUI(self):

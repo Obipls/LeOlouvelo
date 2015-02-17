@@ -1,14 +1,14 @@
 # #!/usr/bin/env python
 # country.py
 # Olivier Louwaars s2814714 en Leonardo Losno Velozo s1668501
-# 12-2-2015
+# 16-02-2015
 
 from flag_color import *
 from flag_ui import *
 
 class Country:
-        """Maakt een Country object aan die als atribuut
-        de naam van een land heeft (self.country) en
+        """Maakt een Country object aan met als attributen
+        de naam van een land (self.country) en
         de vlagkleur van dat land (self.flag)."""
 
         def __init__(self,country):
@@ -29,12 +29,12 @@ class Country:
                 return self.flag
 
         def __str__(self):
-                """Methode die bepaalt hoe het resultaat geprint moet worden"""
+                """Methode die bepaalt hoe het object reageert op een print statement"""
                 return "Hello from {}".format(self.country)
 
 def readText():
-        """Functie die uit het bestand countries_list.txt de landnamen (zonder
-        newlines) eruit haalt en deze als object in de countryList toevoegt"""
+        """Functie die uit het bestand countries_list.txt de landnamen haalt, de newlines verwijdert
+        en deze als object in de countryList toevoegt"""
         countryList=[]
         infile=open("countries_list.txt")
         for line in infile:
@@ -43,16 +43,16 @@ def readText():
         return countryList
 
 def countriesDict():
-        """Functie die een dictionary(cDict) aanmaakt met de landnamen
-        (self.country) van het Country objecten als keys en de vlag
-        (self.flag) kleuren als values.""" 
-        cDict = {}
+        """Functie die een dictionary(cDict) aanmaakt met de landnaam
+        (self.country) van het Country object als key en de vlagkleur
+        (self.flag) als value.""" 
+        cDict={}
         for c in readText():
-                cDict[c.getName()] = c.getFlag()
+                cDict[c.getName()]=c.getFlag()
         return cDict
 
 
-if __name__ == "__main__":
+if __name__=="__main__":
         app=QtGui.QApplication(sys.argv)
         ex=Flag()
         sys.exit(app.exec_())
