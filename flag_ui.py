@@ -34,9 +34,10 @@ class Flag(QtGui.QWidget):
         self.fbox=QtGui.QFrame(self)
         self.fbox.setFrameShape(QtGui.QFrame.StyledPanel)
         self.hbox.addWidget(self.fbox)
-
+        
         for self.i in readText():
             self.box.addItem(self.i.getName())
+        self.onActivated()
 
         self.resize(400, 100)
         self.center()
@@ -47,7 +48,7 @@ class Flag(QtGui.QWidget):
         """Methode die de dictionary met landnamen en landkleuren teruggeeft."""
         return self.cDict
 
-    def onActivated(self, text):
+    def onActivated(self):
         """Methode die de juiste kleur bij het juiste land opzoekt in de country
         dictionary(cDict) en deze in de frame (fbox) weergeeft."""
         country = self.box.currentText()
